@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Generate Table of Contents</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .chat-box {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        .bot-message {
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #ffefc1;
+            text-align: left;
+        }
+        .bot-icon {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <img src="static/images/bootup360logo.png" style="position: fixed; right: 20px; top: 20px; width: 100px;">
+    <div class="container mt-5">
+        <h1>Table of Contents</h1>
+        <div class="chat-box">
+            {% if result %}
+            <div class="bot-message">
+                <img src="static/images/bootupassistant.png" class="bot-icon">
+                <pre>{{ result }}</pre>
+            </div>
+            {% endif %}
+        </div>
+        <form action="/" method="POST" class="mt-3">
+            <input type="submit" value="Generate TOC" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>
